@@ -26,4 +26,4 @@ CryPTrus 2.0 is an advanced cryptography project that provides users with secure
    ```
 4. **Access the Application**: Open your browser and go to `http://localhost:3000`.
 
-For detailed documentation, please refer to the [Wiki](link to wiki) or the [Documentation](link to documentation).
+Created by David Sosnac [DashAngel]
