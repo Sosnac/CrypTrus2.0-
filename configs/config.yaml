@@ -1,0 +1,36 @@
+# CrypTrus2.0 Configuration File
+
+# Network Configuration
+network:
+  timeout: 2
+  threads: 10
+  retries: 1
+
+# Scanner Configuration
+scanner:
+  scan_timeout: 5
+  port_timeout: 2
+  max_ports: 20
+
+# IoT Detection
+iot:
+  enable_signature_matching: true
+  enable_vendor_lookup: true
+  cache_results: true
+
+# Output Configuration
+output:
+  format: json
+  save_directory: ./output
+  timestamp_results: true
+  
+# Logging
+logging:
+  level: INFO
+  file: cryptrus2.log
+  
+# Security
+security:
+  require_root: false
+  verify_ssl: false
+  timeout_seconds: 30
