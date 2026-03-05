@@ -29,7 +29,7 @@ Advanced IoT device detection, identification, and vulnerability assessment tool
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Sosnac/CrypTrus2.0.git
+git clone https://github.com/Sosnac/CryPTrus2.0-.git
 cd CrypTrus2.0
 
 # 2. Run setup script (automated installation)
