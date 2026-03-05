@@ -1,8 +1,8 @@
 After cloning into Termux, here's the complete launch sequence:
 
 # 🔥 STEP 1: Clone the repository
-git clone https://github.com/Sosnac/CrypTrus2.0.git
-cd CrypTrus2.0
+git clone https://github.com/Sosnac/CryPTrus2.0-.git
+cd CrypTrus2.0-
 
 # ⚡ STEP 2: Run automated setup
 bash setup.sh
