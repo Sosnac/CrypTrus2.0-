@@ -1,0 +1,22 @@
+After cloning into Termux, here's the complete launch sequence:
+
+# 🔥 STEP 1: Clone the repository
+git clone https://github.com/Sosnac/CrypTrus2.0.git
+cd CrypTrus2.0
+
+# ⚡ STEP 2: Run automated setup
+bash setup.sh
+
+# 🚀 STEP 3: Quick scan (choose one):
+
+# Option A: Basic scan
+python3 cryptrus2.0.py -t 192.168.1.0/24 --all
+
+# Option B: Interactive menu
+./termux/launcher.sh
+
+# Option C: Full command with all modules
+python3 cryptrus2.0.py -t 192.168.0.0/24 --scan --detect --iot --vuln --save -v
+
+# Option D: After setup, use symlink
+cryptrus2.0 -t 192.168.1.0/24 --all
