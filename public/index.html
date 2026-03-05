@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryPTrus 2.0 - Real-Time Encryption</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <style>
+        body { background: #1a1a1a; color: #00ff41; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; padding-top: 50px; }
+        .container { background: #2a2a2a; padding: 30px; border-radius: 10px; border: 1px solid #00ff41; width: 80%; max-width: 600px; box-shadow: 0 0 15px #00ff41; }
+        input, textarea { width: 100%; padding: 10px; margin-top: 10px; background: #000; border: 1px solid #00ff41; color: #00ff41; box-sizing: border-box; font-family: inherit; }
+        h1 { margin-bottom: 5px; text-shadow: 0 0 10px #00ff41; }
+        label { font-weight: bold; margin-top: 20px; display: block; }
+        
+        /* New Button Styles */
+        #copyBtn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            background: #00ff41;
+            color: #1a1a1a;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        #copyBtn:hover { background: #00cc33; transform: scale(1.02); }
+        #copyBtn:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+    <h1>🔐 CryPTrus 2.0-</h1>
+    <p>Secure Real-Time Encryption</p>
+
+    <div class="container">
+        <label>Enter Message:</label>
+        <input type="text" id="userInput" placeholder="Type secret message here...">
+
+        <label>Encrypted Output (AES):</label>
+        <textarea id="encryptedOutput" rows="4" readonly placeholder="Encrypted text appears here..."></textarea>
+        
+        <button id="copyBtn">COPY CIPHERTEXT</button>
+    </div>
+
+    <script>
+        const secretKey = "my-ultra-secure-key-123";
+        const input = document.getElementById('userInput');
+        const output = document.getElementById('encryptedOutput');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // Real-time encryption logic
+        input.addEventListener('input', () => {
+            const rawText = input.value;
+            if (rawText) {
+                output.value = CryptoJS.AES.encrypt(rawText, secretKey).toString();
+            } else {
+                output.value = "";
+            }
+        });
+
+        // Copy to Clipboard logic
+        copyBtn.addEventListener('click', () => {
+            if (!output.value) return; // Don't copy if empty
+
+            navigator.clipboard.writeText(output.value).then(() => {
+                // UI Feedback
+                const originalText = copyBtn.innerText;
+                copyBtn.innerText = "COPIED TO CLIPBOARD! ✔";
+                copyBtn.style.background = "#ffffff";
+                
+                setTimeout(() => {
+                    copyBtn.innerText = originalText;
+                    copyBtn.style.background = "#00ff41";
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
