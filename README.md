@@ -25,7 +25,14 @@ CryPTrus 2.0 is an advanced cryptography project that provides users with secure
 2. **Install Dependicies**:
    ```bash
    npm install
-3. **Run The Application*:
+3. **Run The Application**:
    ```bash
-   npm start 
+   npm start
+4. **Access Application**:
+   Open your browser and go to
+  http://localhost:3000
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+Created by David Sosnac [DashAngel]
 
