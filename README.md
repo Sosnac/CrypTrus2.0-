@@ -20,7 +20,7 @@ CryPTrus 2.0 is an advanced cryptography project that provides users with secure
 
 1. **Clone the Repository**:
    ```bash
-   git clone [https://github.com/Sosnac/CryPTrus2.0-.git](https://github.com/Sosnac/CryPTrus2.0-.git)
+   git clone (https://github.com/Sosnac/CryPTrus2.0-.git)
    cd CryPTrus2.0-
 2. **Install Dependicies**:
    ```bash
