@@ -45,3 +45,28 @@ Follow these instructions to get a copy of the project up and running on your lo
 ```bash
 git clone [https://github.com/Sosnac/CryPTrus2.0-.git](https://github.com/Sosnac/CryPTrus2.0-.git)
 cd CryPTrus2.0-
+
+<br />
+
+### 2. Install Dependencies
+```bash
+npm install
+
+<br />
+
+### 3. Run The Application
+```bash
+npm start
+
+<br />
+
+### 4. Access the Application
+Open your browser and go to: http://localhost:3000
+
+<br />
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+Created by David Sosnac [DashAngel]
+
+
+
