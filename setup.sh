@@ -19,6 +19,19 @@ apt update -y
 apt upgrade -y
 
 echo "[*] Installing required packages..."
+echo "[*] Installing required packages..."
+
+# Check if the environment is Termux by looking for its specific directory
+if [ -d "/data/data/com.termux/files/usr" ]; then
+    echo "Termux detected! Installing Termux-specific dependencies..."
+    pkg update -y
+    pkg install -y python
+else
+    echo "Standard Linux detected! Installing dependencies..."
+    apt-get update -y
+    apt-get install -y python3 python3-pip
+fi
+
 apt install -y python3 python3-pip curl wget git inetutils net-tools openssh
 
 echo "[*] Installing Python dependencies..."
