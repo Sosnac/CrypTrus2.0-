@@ -11,8 +11,10 @@ from device_detection import DeviceDetection
 # Initialize them
 scanner = NetworkScanner()
 detector = DeviceDetection()
-import os
 import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import argparse
 import json
 import subprocess
