@@ -1,4 +1,4 @@
-![CryPTrus 2.0](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=CryPTrus%202.0&fontSize=70&fontAlignY=40&desc=Advanced%20Cryptography%20Simplified&descAlignY=60&descAlign=50)
+![Cryptrus 2.0](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=CryPTrus%202.0&fontSize=70&fontAlignY=40&desc=Advanced%20Cryptography%20Simplified&descAlignY=60&descAlign=50)
 
 <div align="center">
 
