@@ -24,14 +24,28 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-# Add modules to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'modules'))
+import sys
+import os
+from pathlib import Path
 
-from module.network_scanner import NetworkScanner
-from module.device_detection import DeviceDetector
-from module.iot_identifier import IoTIdentifier
-from module.vulnerability_checker import VulnerabilityChecker
-from module.data_parser import DataParser
+# --- THE PATH FIXER ---
+# This tells Python to look inside the 'modules' folder for scripts
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(script_dir, 'modules'))
+sys.path.insert(0, os.path.join(script_dir, 'core'))
+
+# --- CORRECT IMPORTS ---
+# Since we added 'modules' to the path above, we import directly from the filenames
+try:
+    from network_scanner import NetworkScanner
+    from device_detection import DeviceDetector
+    from iot_identifier import IoTIdentifier
+    from vulnerability_checker import VulnerabilityChecker
+    from data_parser import DataParser
+except ImportError as e:
+    print(f"Error: Could not find a required module. {e}")
+    sys.exit(1)
+
 
 class CrypTrus2:
     """Main CrypTrus2.0 IoT Information Gathering Tool"""
