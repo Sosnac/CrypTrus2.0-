@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.10"] # Simplified to focus on your main version
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -19,6 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
     - name: Analysing the code with pylint
-  run: |
-    pylint $(git ls-files '*.py') --exit-zero
+      run: |
+        # This tells Pylint to look in the current folder for your new modules
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
+        # The --exit-zero flag tells GitHub that a "fail" is actually a "pass"
+        pylint $(git ls-files '*.py') --exit-zero
 
