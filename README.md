@@ -1,4 +1,4 @@
-# 🔥⚡ CrypTrus2.0 - IoT Information Gathering Tool
+#  CrypTrus2.0 - IoT Information Gathering Tool🕵️
 
 ## **Termux Non-Root Edition v2.0**
 
@@ -8,13 +8,13 @@ Advanced IoT device detection, identification, and vulnerability assessment tool
 
 ## 📋 Features
 
-✅ **Network Scanning** - ARP and ICMP-based host discovery  
-✅ **Device Detection** - Identify devices and gather system information  
-✅ **IoT Identification** - Detect and classify IoT devices  
-✅ **Vulnerability Assessment** - Check for known vulnerabilities  
-✅ **Non-Root Compatible** - Works perfectly in Termux without sudo  
-✅ **Flexible Output** - JSON, CSV, and text report formats  
-✅ **Termux Optimized** - Designed specifically for mobile environments  
+**Network Scanning** - ARP and ICMP-based host discovery  
+**Device Detection** - Identify devices and gather system information  
+**IoT Identification** - Detect and classify IoT devices  
+**Vulnerability Assessment** - Check for known vulnerabilities  
+**Non-Root Compatible** - Works perfectly in Termux without sudo  
+**Flexible Output** - JSON, CSV, and text report formats  
+**Termux Optimized** - Designed specifically for mobile environments  
 
 ---
 
