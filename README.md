@@ -61,7 +61,7 @@ npm start
 
 
 ### 4. Access the Application
-Open your browser and go to: http://localhost:3000
+Open your browser and go to: http://localhost:3001
 
 
 This project is licensed under the MIT License - see the LICENSE file for details.
