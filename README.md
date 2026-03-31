@@ -313,7 +313,7 @@ MIT License - See LICENSE file for details
 ## 👨‍💻 Author
 
 **Sosnac** - Creator of CrypTrus2.0  
-GitHub: [@Sosnac](https://github.com/David Sosnac)
+GitHub: [@Sosnac](https://github.com/DavidSosnac)
 
 ---
 
