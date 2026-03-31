@@ -1,7 +1,7 @@
 import CryptoJS from 'crypto-js';
 
-// In a real app, this should be a complex string stored in an environment variable (.env)
-const SECRET_KEY = "your-super-secret-key-change-this";
+// This should be a complex string stored in an environment variable (.env)
+const SECRET_KEY = "my-super-secret-key";
 
 /**
  * Encrypts a string of text using AES-256
