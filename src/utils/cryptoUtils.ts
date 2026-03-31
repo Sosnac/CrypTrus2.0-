@@ -1,23 +1,31 @@
 import CryptoJS from 'crypto-js';
 
-// This should be a complex string stored in an environment variable (.env)
-const SECRET_KEY = "my-super-secret-key";
-
-/**
- * Encrypts a string of text using AES-256
- * @param text The plain text to encrypt
- * @returns The encrypted string (Ciphertext)
- */
-export const encryptData = (text: string): string => {
-  return CryptoJS.AES.encrypt(text, SECRET_KEY).toString();
+export const encryptWithTimer = (text: string, key: string, seconds: number | null): string => {
+  let payload = text;
+  if (seconds) {
+    const expiry = Math.floor(Date.now() / 1000) + seconds;
+    payload = `EXP:${expiry}|${text}`;
+  }
+  return CryptoJS.AES.encrypt(payload, key).toString();
 };
 
-/**
- * Decrypts an AES-256 encrypted string
- * @param ciphertext The encrypted string
- * @returns The original plain text
- */
-export const decryptData = (ciphertext: string): string => {
-  const bytes = CryptoJS.AES.decrypt(ciphertext, SECRET_KEY);
-  return bytes.toString(CryptoJS.enc.Utf8);
+export const decryptWithTimer = (ciphertext: string, key: string): { message: string; expired: boolean; remaining?: number } => {
+  try {
+    const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+    const decoded = bytes.toString(CryptoJS.enc.Utf8);
+    
+    if (decoded.startsWith("EXP:")) {
+      const [meta, msg] = decoded.split('|');
+      const expiry = parseInt(meta.replace("EXP:", ""));
+      const now = Math.floor(Date.now() / 1000);
+      
+      if (now > expiry) return { message: "", expired: true };
+      return { message: msg, expired: false, remaining: expiry - now };
+    }
+    
+    return { message: decoded, expired: false };
+  } catch {
+    return { message: "Error: Invalid Key or Cipher", expired: false };
+  }
 };
+
