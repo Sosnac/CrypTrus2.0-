@@ -82,6 +82,93 @@ function App() {
       <div className="max-w-4xl mx-auto">
         <header className="mb-12 text-center">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-2">
+return (
+  <div className="min-h-screen bg-slate-950 text-white p-4 font-mono">
+    <div className="max-w-md mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
+      <h1 className="text-2xl font-bold text-cyan-400 mb-6 text-center">CryPTrus 2.0 Vault</h1>
+
+      {/* 🟢 NEW: MODE TOGGLE BUTTONS */}
+      <div className="flex bg-black p-1 rounded-2xl mb-6 border border-slate-800">
+        <button 
+          onClick={() => { setMode('encrypt'); setResult(null); }}
+          className={`flex-1 py-3 rounded-xl font-bold transition-all ${mode === 'encrypt' ? 'bg-cyan-600 text-white shadow-lg' : 'text-slate-500'}`}
+        >
+          ENCRYPT
+        </button>
+        <button 
+          onClick={() => { setMode('decrypt'); setResult(null); }}
+          className={`flex-1 py-3 rounded-xl font-bold transition-all ${mode === 'decrypt' ? 'bg-red-600 text-white shadow-lg' : 'text-slate-500'}`}
+        >
+          DECRYPT
+        </button>
+      </div>
+
+      <div className="space-y-4">
+        {/* Master Key Input */}
+        <input 
+          type="password" 
+          placeholder="Master Key (Secret Password)"
+          className="w-full bg-black border border-slate-700 p-4 rounded-xl focus:border-cyan-400 outline-none"
+          value={key} 
+          onChange={(e) => setKey(e.target.value)}
+        />
+        
+        {/* Dynamic Textarea based on Mode */}
+        <textarea 
+          placeholder={mode === 'encrypt' ? "Type your secret message..." : "Paste your U2FsdGVk... cipher here"}
+          className="w-full h-32 bg-black border border-slate-700 p-4 rounded-xl focus:border-cyan-400 outline-none"
+          value={input} 
+          onChange={(e) => setInput(e.target.value)}
+        />
+
+        {/* Timer Slider (Only shows in Encrypt mode) */}
+        {mode === 'encrypt' && (
+          <div className="p-4 bg-slate-800 rounded-xl border border-slate-700">
+            <label className="text-xs text-slate-400 block mb-2">
+              AUTO-DESTRUCT: {timer === 0 ? 'DISABLED' : `${timer} SECONDS`}
+            </label>
+            <input 
+              type="range" min="0" max="300" step="30" 
+              value={timer} 
+              onChange={(e) => setTimer(Number(e.target.value))} 
+              className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-400" 
+            />
+          </div>
+        )}
+
+        {/* Action Button */}
+        <button 
+          onClick={handleProcess} 
+          className={`w-full py-4 rounded-xl font-black transition-all ${mode === 'encrypt' ? 'bg-white text-black hover:bg-cyan-400' : 'bg-red-500 text-white hover:bg-red-400'}`}
+        >
+          {mode === 'encrypt' ? '🔒 GENERATE VAULT STRING' : '🔓 UNLOCK VAULT'}
+        </button>
+      </div>
+
+      {/* Result Display Area */}
+      {result && (
+        <div className="mt-6 p-4 bg-black rounded-xl border border-dashed border-slate-700">
+          {result.expired ? (
+            <p className="text-red-500 font-bold text-center animate-pulse">💀 MESSAGE SELF-DESTRUCTED</p>
+          ) : (
+            <div>
+              <p className="text-[10px] text-slate-500 mb-1 uppercase">Result:</p>
+              <p className="break-all text-cyan-300 font-bold selection:bg-cyan-900">
+                {result.type === 'cipher' ? result.data : result.message}
+              </p>
+              {result.remaining && (
+                <p className="text-[10px] text-orange-400 mt-2 italic">
+                  Expires in {result.remaining}s...
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+);
+
             CryPTrus 2.0
           </h1>
           <p className="text-slate-400">Military-grade AES-256 Encryption Dashboard</p>
