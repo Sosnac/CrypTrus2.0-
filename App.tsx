@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { encryptData, decryptData } from './utils/cryptoUtils';
 
 function App() {
-  const [userKey, setUserKey] = useState<string>('default-key-123');
-  const [inputText, setInputText] = useState<string>('');
+  // This tells the app: "Use the .env key if it exists, otherwise use this backup."
+const [userKey, setUserKey] = useState<string>(
+  process.env.REACT_APP_MASTER_KEY || 'default-key-123'
+);
+;
   const [encryptedText, setEncryptedText] = useState<string>('');
   const [cipherToDecrypt, setCipherToDecrypt] = useState<string>('');
   const [decryptedResult, setDecryptedResult] = useState<string>('');
