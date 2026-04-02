@@ -67,7 +67,7 @@ Open your browser and go to: http://localhost:3000
 
 <br />
 
-![Author](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=60&section=header&text=Quick%20Start&fontSize=25)
+![Author](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=60&section=header&text=Author&fontSize=25)
 
 **David Sosnac** 
 
