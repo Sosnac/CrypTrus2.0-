@@ -1,4 +1,6 @@
-# Contributing to CryPTrus 2.0 🚀
+![Contributing](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Contributing&🚀fontSize=70&fontAlignY=40&desc=Advanced%20Cryptography%20Simplified&descAlignY=60&descAlign=50)
+
+Contributing to CrypTrus2.0
 
 First off, thank you for considering contributing to CryPTrus 2.0! It's people like you that make the open-source community such an amazing place to learn, inspire, and create.
 
