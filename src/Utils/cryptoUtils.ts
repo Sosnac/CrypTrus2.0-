@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 
-// This is the 30-line "Pro" logic named to work with my App.tsx
+// This is the 30-line "Pro" logic meant to work with my App.tsx
 export const encryptData = (text: string, key: string, seconds: number | null = null): string => {
     let payload = text;
     if (seconds) {
