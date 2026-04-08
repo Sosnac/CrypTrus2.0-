@@ -9,8 +9,9 @@ cd "$PROJECT_DIR"
 
 echo ""
 echo "╔════════════════════════════════════════════════════╗"
-echo "║  🔥 CrypTrus2.0 - IoT Intelligence Gatherer ⚡    ║"
-echo "║     Termux Non-Root Edition v2.0                  ║"
+echo "║  🔥 CrypTrus2.0 - IoT Intelligence Gathering ⚡    ║"
+echo "║     Termux Non-Root Edition v2.0
+Author: David Sosnac                ║"
 echo "╚════════════════════════════════════════════════════╝"
 echo ""
 
