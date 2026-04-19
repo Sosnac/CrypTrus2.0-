@@ -61,8 +61,10 @@ npm install
 npm start
 ```
 
+### 4. Certificate Management
+Replace the default cert.pem with your organization's CA-signed certificates for production use.
 
-### 4. Access the Application
+### 5. Access the Application
 Open your browser and go to: https://localhost:3443
 
 <br />
