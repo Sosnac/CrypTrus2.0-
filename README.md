@@ -35,7 +35,7 @@ src="https://img.shields.io/badge/PYTHON-F7DF1E?style=for-the-badge&logo=python&
 * **Node.js:** Server-side environment.
 * **NPM:** Package management.
 * **JavaScript/TypeScript:** Core logic and encryption implementation.
-* **React/HTML/CSS:** User interface (runs on port 3000).
+* **React/HTML/CSS:** User interface (runs on port 3443).
 
 <br />
 
@@ -63,7 +63,7 @@ npm start
 
 
 ### 4. Access the Application
-Open your browser and go to: http://localhost:3000
+Open your browser and go to: https://localhost:3443
 
 <br />
 
