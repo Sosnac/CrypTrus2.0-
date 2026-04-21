@@ -65,7 +65,7 @@ npm start
 Replace the default cert.pem with your organization's CA-signed certificates for production use. OR if you don't have any CA signed cert run the below command in your command line CrypTrus2.0 directory to render a self-signed certificate for SSL/TLS Encryption.
 ```bash
 pkg install openssl
-openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+openssl req -nodes -new -x509 -keyout server.key -out server.cert -days 365 -subj "/CN=localhost"
 ``` 
 
 ### 5. Access the Application
