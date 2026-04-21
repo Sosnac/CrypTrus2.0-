@@ -58,14 +58,14 @@ npm install
 
 ### 3. Run The Application
 ```bash
-npm start
+node index.js
 ```
 
 ### 4. Certificate Management
 Replace the default cert.pem with your organization's CA-signed certificates for production use. OR if you don't have any CA signed cert run the below command in your command line CrypTrus2.0 directory to generate a self-signed certificate for SSL/TLS Encryption even though your browser will flag the certificate just advance because it's you who generated the flagged certificate.
 ```bash
 pkg install openssl
-openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+openssl req -nodes -new -x509 -keyout server.key -out server.cert -days 365 -subj "/C=ZM/ST=Lusaka/L=Lusaka/O=CryPTrus/OU=Security/CN=localhost"
 ``` 
 
 ### 5. Access the Application
