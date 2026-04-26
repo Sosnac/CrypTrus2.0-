@@ -62,7 +62,7 @@ node index.js
 ```
 
 ### 4. Certificate Management
-Replace the default cert.pem with your organization's CA-signed certificates for production use. OR if you don't have any CA signed certificate then run the below command in your terminal in CrypTrus2.0 ls directory to generate a self-signed certificate for SSL/TLS Encryption even though your browser will flag the certificate just advance. why error? because the browser can't verify the issuer of the certificate even though encryption will still work.
+Replace the default cert.pem with your organization's CA-signed certificates for production use. OR if you don't have any CA signed certificate then run the below command in your terminal in CrypTrus2.0 ls directory to generate a self-signed certificate for SSL/TLS Encryption even though your browser will flag the certificate just advance. why seeing security warning? because the browser can't verify the issuer of the certificate even though encryption will still work.
 ```bash
 openssl req -nodes -new -x509 -keyout server.key -out server.cert -days 365 -subj "/C=ZM/ST=Lusaka/L=Lusaka/O=CrypTrus/OU=Security/CN=localhost"
 ``` 
